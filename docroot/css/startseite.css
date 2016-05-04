@@ -6,7 +6,7 @@
 
 .pa-randhintergrund { 
 
- 	background-color: #F2F2F2 !important;
+ 	background-color: #F4F4F4; !important;
 	
 } 
 
@@ -15,10 +15,10 @@
 div.startseite-innercontainer {
 	background-color:  white;
 	padding-top:10px !important;
-	padding-left:10px !important;
-	margin-left:60px !important;
-	padding-right:10px !important;
-	margin-right:60px !important;
+	padding-left:20px !important;
+	margin-left:50px !important;
+	padding-right:20px !important;
+	margin-right:50px !important;
 	
 }
 

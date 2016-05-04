@@ -163,10 +163,17 @@ a.aui pre,
 
 .ist-topbar{
 	background-color: black;
-	margin-left: 16%;
-	margin-right: 16%;
+	/*margin-left: 16%;
+	margin-right: 16%;*/
+	margin-left:0px;
+	margin-right:0px;
+	margin-top: 10px;
 	white-space: nowrap;
 	overflow: hidden;
+	font-size:12px;
+	line-height:18px;
+	background-color: #F4F4F4; 
+	
 }
 
 .aui #banner .ist-topbar p {
@@ -174,7 +181,12 @@ a.aui pre,
 }
 
 div .ist-topbar{
-	visibility: hidden;
+		/*visibility: hidden;*/
+	/* 
+	Anpassung durch OtN: 
+	Daraus folgt: CSS-Hack muss das auf  display:block setzen
+	*/
+	display:none;
 }
 
 /* ++++++++++++++++
