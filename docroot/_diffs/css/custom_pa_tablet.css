@@ -82,7 +82,7 @@
 		position: absolute;
 		width: 100%;
 		left: 0px;
-		visibility: visible; * startseite theme: navigation is visible in mobile view only*/
+		visibility: visible; /* startseite theme: navigation is visible in mobile view only*/
 	}
 	
 	.aui #navigation li{
