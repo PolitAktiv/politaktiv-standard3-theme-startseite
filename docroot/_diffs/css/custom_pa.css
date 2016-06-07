@@ -21,6 +21,12 @@
     font-family: railway, sans-serif;	
 }
 
+.aui a, .aui a:hover, .aui a:focus{
+    color: rgb(85, 85, 85);
+    font-weight: inherit;
+    text-decoration: none;
+}
+
 .aui h1{
   font-size: 2em;
   line-height: 34px; }
