@@ -8,8 +8,6 @@
 	<theme id="startseite-standard3-theme" name="Startseite Standard 3" >
 		<settings>
 				<setting key="systemGroupId" value="10165" />
-				<setting key="theme3CSSOverwriteId" value="THEME3_CSS_OVERWRITE" />
-				<setting key="theme3JSOverwriteId" value="THEME3_JS_OVERWRITE" />
 				<setting key="istTopBarArticleId" value="SYSTEM_IST_TOP_BAR" />
 				<setting key="staticSocialBookmarId" value="SYSTEM_STATIC_SOCIAL_BM" />
 				<setting key="footerArticleId" value="SYSTEM_FOOTER" />

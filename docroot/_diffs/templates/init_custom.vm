@@ -20,6 +20,9 @@ This file allows you to override and define new Velocity variables.
 #set($show_site_name		= false)
 #set($canSetSmartphoneContent = $permissionChecker.isCompanyAdmin() || $permissionChecker.isCommunityAdmin($getterUtil.getLong($group_id)) )
 #set($systemGroupId = $getterUtil.getLong($theme.getSetting("systemGroupId")))
+#set($jsIncludePath = "$theme_display.getPortalURL()/documents/$systemGroupId/0/globalJsInclude.js")
+#set($cssIncludePath = "$theme_display.getPortalURL()/documents/$systemGroupId/0/globalCssInclude.css")
+
 
 #* ------------------------------ footer -------------------------------- *#
 #set($footerArticleId = $theme.getSetting("footerArticleId"))
@@ -32,19 +35,6 @@ This file allows you to override and define new Velocity variables.
 #* -------------------------- custom logo -------------------------- *#
 #set($customDKLogo = $theme.getSetting("customDKLogo"))
 #set($customDKLogoContent = $journalContentUtil.getContent($getterUtil.getLong($group_id), "$customDKLogo", null, "$locale", $theme_display))
-
-#* -------------------------- custom CSS overwrite -------------------------- *#
-#set($theme3CSSOverwrite = $theme.getSetting("theme3CSSOverwriteId"))
-#* if overwrite file is located in group scope then the following variable is not null *#
-#set($theme3CSSOverwriteContent = $journalContentUtil.getContent($getterUtil.getLong($group_id), "$theme3CSSOverwrite", null, "$locale", $theme_display))
-#* if no overwrite-file in group, then check if overwrite defined globally *#
-#if(! $theme3CSSOverwriteContent)
-	#set($theme3CSSOverwriteContent = $journalContentUtil.getContent($systemGroupId, "$theme3CSSOverwrite", null, "$locale", $theme_display))
-#end
-
-#* -------------------------- custom CSS overwrite -------------------------- *#
-#set($theme3JSOverwrite = $theme.getSetting("theme3JSOverwriteId"))
-#set($theme3JSOverwriteContent = $journalContentUtil.getContent($systemGroupId, "$theme3JSOverwrite", null, "$locale", $theme_display))
 
 
 #* ------------------------------ ist-top-bar -------------------------------- *#

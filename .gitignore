@@ -1,2 +1,14 @@
-bin
+*.class
+docroot/css/*
+docroot/images/*
+docroot/js/*
+docroot/templates/*
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
 .gradle
+bin/
+bin/*
