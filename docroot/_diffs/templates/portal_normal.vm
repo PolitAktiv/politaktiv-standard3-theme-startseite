@@ -75,10 +75,12 @@ $theme.include($body_top_include)
 			</script>
 		</div>
 	#end
+
+</div>
+	
 	<footer id="footer" role="contentinfo">
 		<span> $footerContent </span>
 	</footer>
-</div>
 
 </div>
 

@@ -21,10 +21,10 @@
     font-family: railway, sans-serif;	
 }
 
-.aui a, .aui a:hover, .aui a:focus{
+.aui a, .aui a:hover, .aui a:focus {
     color: rgb(85, 85, 85);
-    font-weight: inherit;
-    text-decoration: none;
+   	font-weight: inherit;    
+   	text-decoration: none;
 }
 
 .aui h1{
@@ -401,6 +401,7 @@ div .ist-topbar{
 
 #footer{
   text-align: right;
+  padding-top: 53px;
 }
 
 /*default footer styles*/
