@@ -22,7 +22,7 @@
 }
 
 /*---------------- make anchors in texts look like normal text  ----------------*/
-.aui .journal-content-article a, .aui .journal-content-article a:hover, .aui .journal-content-article a:focus {
+.aui .journal-content-article a[name], .aui .journal-content-article a[name]:hover, .aui .journal-content-article a[name]:focus {
     	color: rgb(85, 85, 85);
    	font-weight: inherit;    
    	text-decoration: none;
