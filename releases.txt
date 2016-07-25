@@ -12,3 +12,6 @@
 * 2016-23-06 - release 6.2.1.5
   * fixed anchors - now they only behave like text in webcontents
   * fixed padding for mobile views
+  
+ * 2016-25-07 - release 6.2.1.6
+  * improved anchors 
