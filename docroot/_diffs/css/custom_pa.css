@@ -446,8 +446,9 @@ div.politaktiv-theme-footer ul li a{
 .login-navigation{ max-width: 100%; clear: both;}
 
 /* ---------- registration styles ---------- */
-.registration-content{ max-width:70%; float:left; }
-.registration-description-article{ max-width:30%; float:right; }
+.registration-content{ max-width:68%; float:left; }
+.registration-content .taglib-captcha input{ width: 50px; }
+.registration-description-article{ max-width:28%; float:right; }
 .registration-navigation{ max-width:100%; clear: both; }
 
 /*-------- carousel styles -----------*/

@@ -62,6 +62,10 @@
 		position: relative;
 	}
 
+	/* ---------- registration styles ---------- */
+	.registration-content{ max-width:100%; float:none; }
+	.registration-description-article{ max-width:100%; float:none; }
+
 /* ++++++++++++++++
 ++++++IMAGE++++++++
 +++++++BlOCK+++++++
