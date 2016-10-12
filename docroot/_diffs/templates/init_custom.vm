@@ -22,6 +22,8 @@ This file allows you to override and define new Velocity variables.
 #set($systemGroupId = $getterUtil.getLong($theme.getSetting("systemGroupId")))
 #set($jsIncludePath = "$theme_display.getPortalURL()/documents/$systemGroupId/0/globalJsInclude.js")
 #set($cssIncludePath = "$theme_display.getPortalURL()/documents/$systemGroupId/0/globalCssInclude.css")
+#set($jsDKIncludePath = "$theme_display.getPortalURL()/documents/$getterUtil.getLong($group_id)/0/DkJsInclude.js")
+#set($cssDKIncludePath = "$theme_display.getPortalURL()/documents/$getterUtil.getLong($group_id)/0/DkCssInclude.css")
 
 
 #* ------------------------------ footer -------------------------------- *#
