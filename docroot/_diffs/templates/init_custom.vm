@@ -20,10 +20,24 @@ This file allows you to override and define new Velocity variables.
 #set($show_site_name		= false)
 #set($canSetSmartphoneContent = $permissionChecker.isCompanyAdmin() || $permissionChecker.isCommunityAdmin($getterUtil.getLong($group_id)) )
 #set($systemGroupId = $getterUtil.getLong($theme.getSetting("systemGroupId")))
-#set($jsIncludePath = "$theme_display.getPortalURL()/documents/$systemGroupId/0/globalJsInclude.js")
-#set($cssIncludePath = "$theme_display.getPortalURL()/documents/$systemGroupId/0/globalCssInclude.css")
-#set($jsDKIncludePath = "$theme_display.getPortalURL()/documents/$getterUtil.getLong($group_id)/0/DkJsInclude.js")
-#set($cssDKIncludePath = "$theme_display.getPortalURL()/documents/$getterUtil.getLong($group_id)/0/DkCssInclude.css")
+
+## ---- custom content ---- ##
+## favicon
+#set($localFaviconFileName = "DkFavicon.ico")
+#set($customDKFaviconPath ="$theme_display.getPortalURL()/documents/$getterUtil.getLong($group_id)/0/$localFaviconFileName")
+## css and js
+#set($globalCSSFileName = "globalCssInclude.css")
+#set($globalJSFileName = "globalJsInclude.css")
+#set($localCSSFileName = "DkCssInclude.css")
+#set($localJSFileName = "DkJsInclude.js")
+#set($jsIncludePath = "$theme_display.getPortalURL()/documents/$systemGroupId/0/$globalJSFileName")
+#set($cssIncludePath = "$theme_display.getPortalURL()/documents/$systemGroupId/0/$globalCSSFileName")
+#set($jsDKIncludePath = "$theme_display.getPortalURL()/documents/$getterUtil.getLong($group_id)/0/$localJSFileName")
+#set($cssDKIncludePath = "$theme_display.getPortalURL()/documents/$getterUtil.getLong($group_id)/0/$localCSSFileName")
+
+## Service for checking if files in documentLibrary exist
+#set($fileService = $serviceLocator.findService("com.liferay.portlet.documentlibrary.service.DLFileEntryLocalService"))
+
 
 
 #* ------------------------------ footer -------------------------------- *#

@@ -11,15 +11,28 @@
 
 	$theme.include($top_head_include)
 	
-	## include css from global document library
-	<link rel="stylesheet" href="$cssIncludePath">
-	## include js from global document library
-	<script type="text/javascript" src="$jsIncludePath"></script>
+	## Overwrite the favicon, defined in top_head by custom favicon:
+	#if ($fileService.getFileEntry($getterUtil.getLong($group_id),  0, "$localFaviconFileName"))
+	 <link rel="Shortcut Icon" href="$customDKFaviconPath" />
+	#end 
 	
-	## include css from DK document library
-	<link rel="stylesheet" href="$cssDKIncludePath">
-	## include js from DK document library
-	<script type="text/javascript" src="$jsDKIncludePath"></script>
+	#* ---- Include custom CSS and JS ----*#
+	## include css from global document library if exists on server
+	#if ($fileService.getFileEntry($getterUtil.getLong($group_id),  0, "$globalCSSFileName"))
+		<link rel="stylesheet" href="$cssIncludePath">
+	#end 
+	## include js from global document library if exists on server 
+	#if ($fileService.getFileEntry($getterUtil.getLong($group_id),  0, "$globalJSFileName"))
+		<script type="text/javascript" src="$jsIncludePath"></script>
+	#end
+	## include css from DK document library if exists on server
+	#if ($fileService.getFileEntry($getterUtil.getLong($group_id),  0, "$localCSSFileName"))
+		<link rel="stylesheet" href="$cssDKIncludePath">
+	#end
+	## include js from DK document library if exists on server 
+	#if ($fileService.getFileEntry($getterUtil.getLong($group_id),  0, "$localJSFileName"))
+		<script type="text/javascript" src="$jsDKIncludePath"></script>
+	#end
 
 </head>
 
