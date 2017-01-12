@@ -18,11 +18,11 @@
 	
 	#* ---- Include custom CSS and JS ----*#
 	## include css from global document library if exists on server
-	#if ($fileService.getFileEntry($getterUtil.getLong($group_id),  0, "$globalCSSFileName"))
+	#if ($fileService.getFileEntry($getterUtil.getLong($systemGroupId),  0, "$globalCSSFileName"))
 		<link rel="stylesheet" href="$cssIncludePath">
 	#end 
 	## include js from global document library if exists on server 
-	#if ($fileService.getFileEntry($getterUtil.getLong($group_id),  0, "$globalJSFileName"))
+	#if ($fileService.getFileEntry($getterUtil.getLong($systemGroupId),  0, "$globalJSFileName"))
 		<script type="text/javascript" src="$jsIncludePath"></script>
 	#end
 	## include css from DK document library if exists on server
