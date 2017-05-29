@@ -27,7 +27,7 @@ This file allows you to override and define new Velocity variables.
 #set($customDKFaviconPath ="$theme_display.getPortalURL()/documents/$getterUtil.getLong($group_id)/0/$localFaviconFileName")
 ## css and js
 #set($globalCSSFileName = "globalCssInclude.css")
-#set($globalJSFileName = "globalJsInclude.css")
+#set($globalJSFileName = "globalJsInclude.js")
 #set($localCSSFileName = "DkCssInclude.css")
 #set($localJSFileName = "DkJsInclude.js")
 #set($jsIncludePath = "$theme_display.getPortalURL()/documents/$systemGroupId/0/$globalJSFileName")
