@@ -21,6 +21,25 @@ This file allows you to override and define new Velocity variables.
 #set($canSetSmartphoneContent = $permissionChecker.isCompanyAdmin() || $permissionChecker.isCommunityAdmin($getterUtil.getLong($group_id)) )
 #set($systemGroupId = $getterUtil.getLong($theme.getSetting("systemGroupId")))
 
+## ---- custom content ---- ##
+## favicon
+#set($localFaviconFileName = "DkFavicon.ico")
+#set($customDKFaviconPath ="$theme_display.getPortalURL()/documents/$getterUtil.getLong($group_id)/0/$localFaviconFileName")
+## css and js
+#set($globalCSSFileName = "globalCssInclude.css")
+#set($globalJSFileName = "globalJsInclude.js")
+#set($localCSSFileName = "DkCssInclude.css")
+#set($localJSFileName = "DkJsInclude.js")
+#set($jsIncludePath = "$theme_display.getPortalURL()/documents/$systemGroupId/0/$globalJSFileName")
+#set($cssIncludePath = "$theme_display.getPortalURL()/documents/$systemGroupId/0/$globalCSSFileName")
+#set($jsDKIncludePath = "$theme_display.getPortalURL()/documents/$getterUtil.getLong($group_id)/0/$localJSFileName")
+#set($cssDKIncludePath = "$theme_display.getPortalURL()/documents/$getterUtil.getLong($group_id)/0/$localCSSFileName")
+
+## Service for checking if files in documentLibrary exist
+#set($fileService = $serviceLocator.findService("com.liferay.portlet.documentlibrary.service.DLFileEntryLocalService"))
+
+
+
 #* ------------------------------ footer -------------------------------- *#
 #set($footerArticleId = $theme.getSetting("footerArticleId"))
 #set($footerContent = $journalContentUtil.getContent($systemGroupId, "$footerArticleId", null, "$locale", $theme_display))
@@ -32,19 +51,6 @@ This file allows you to override and define new Velocity variables.
 #* -------------------------- custom logo -------------------------- *#
 #set($customDKLogo = $theme.getSetting("customDKLogo"))
 #set($customDKLogoContent = $journalContentUtil.getContent($getterUtil.getLong($group_id), "$customDKLogo", null, "$locale", $theme_display))
-
-#* -------------------------- custom CSS overwrite -------------------------- *#
-#set($theme3CSSOverwrite = $theme.getSetting("theme3CSSOverwriteId"))
-#* if overwrite file is located in group scope then the following variable is not null *#
-#set($theme3CSSOverwriteContent = $journalContentUtil.getContent($getterUtil.getLong($group_id), "$theme3CSSOverwrite", null, "$locale", $theme_display))
-#* if no overwrite-file in group, then check if overwrite defined globally *#
-#if(! $theme3CSSOverwriteContent)
-	#set($theme3CSSOverwriteContent = $journalContentUtil.getContent($systemGroupId, "$theme3CSSOverwrite", null, "$locale", $theme_display))
-#end
-
-#* -------------------------- custom CSS overwrite -------------------------- *#
-#set($theme3JSOverwrite = $theme.getSetting("theme3JSOverwriteId"))
-#set($theme3JSOverwriteContent = $journalContentUtil.getContent($systemGroupId, "$theme3JSOverwrite", null, "$locale", $theme_display))
 
 
 #* ------------------------------ ist-top-bar -------------------------------- *#

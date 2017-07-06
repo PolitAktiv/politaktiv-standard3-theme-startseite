@@ -14,13 +14,20 @@
 .aui {
   font-family: railway, sans-serif; }
 
+/*---------------- make anchors in texts look like normal text  ----------------*/
+.aui .journal-content-article a[name], .aui .journal-content-article a[name]:hover, .aui .journal-content-article a[name]:focus,
+.aui .journal-content-article a:not([href]), .aui .journal-content-article a:not([href]):hover, .aui .journal-content-article a:not([href]):focus {
+  color: #555555;
+  font-weight: inherit;
+  text-decoration: none; }
+
 .aui h1 {
   font-size: 2em;
-  line-height: 30px; }
+  line-height: 34px; }
 
 .aui h2 {
   font-size: 1.6em;
-  line-height: 30px; }
+  line-height: 28px; }
 
 .aui h3 {
   font-size: 1.4em;
@@ -75,7 +82,8 @@ a.aui pre,
   float: right;
   bottom: 0px;
   right: 0px;
-  position: absolute; }
+  position: absolute;
+  padding-bottom: 6px; }
 
 .aui #banner h1 {
   clip: auto;
@@ -98,10 +106,12 @@ a.aui pre,
 .logo {
   float: left;
   text-align: center;
-  width: 15%;
+  width: 13%;
   margin-right: 1%;
-  margin-top: 10px;
-  margin-bottom: 10px; }
+  margin-left: 1%;
+  padding-bottom: 6px;
+  position: absolute;
+  bottom: 0; }
 
 #heading {
   overflow: auto;
@@ -110,11 +120,13 @@ a.aui pre,
   width: 100%; }
 
 .aui .breadcrumb {
-  margin-bottom: 0px;
   text-align: left;
   font-size: 14px;
   color: #676767;
   background-color: white; }
+
+ul.breadcrumb {
+  padding-bottom: 3px !important; }
 
 .aui .lfr-hudcrumbs {
   z-index: 1002;
@@ -132,8 +144,10 @@ a.aui pre,
 .page-title {
   overflow: hidden;
   width: 68%;
+  margin-top: 25px;
   padding-bottom: 20px;
-  /*for breadcrumbs not to be overflew*/ }
+  /*for breadcrumbs not to be overflew*/
+  margin-left: 16%; }
 
 .ist-topbar {
   background-color: black;
@@ -190,6 +204,10 @@ div .ist-topbar {
 /* ++++++++++++++++
 ++++NAVIGATION+++++
 +++++++++++++++++*/
+.aui #navigation {
+  /* startseite theme: do not show navigtion in desktop view*/
+  visibility: hidden; }
+
 .aui #navigation {
   clear: both;
   font-size: 12px;
@@ -314,7 +332,8 @@ div .ist-topbar {
 ++++++FOOTER+++++++
 +++++++++++++++++*/
 #footer {
-  text-align: right; }
+  text-align: right;
+  padding-top: 53px; }
 
 /*default footer styles*/
 div.politaktiv-theme-footer {
@@ -363,11 +382,14 @@ div.politaktiv-theme-footer ul li a {
 
 /* ---------- registration styles ---------- */
 .registration-content {
-  max-width: 70%;
+  max-width: 68%;
   float: left; }
 
+.registration-content .taglib-captcha input {
+  width: 50px; }
+
 .registration-description-article {
-  max-width: 30%;
+  max-width: 28%;
   float: right; }
 
 .registration-navigation {

@@ -11,15 +11,29 @@
 
 	$theme.include($top_head_include)
 	
-	## if some custom global style-overwriting file is defined, add CSS to header: 
-	#if($theme3CSSOverwriteContent) 
-		<style> $theme3CSSOverwriteContent </style>
-	#end
-	## if some custom global JS-file is defined, add JS to header: 
-	#if($theme3JSOverwriteContent) 
-		$theme3JSOverwriteContent 
-	#end
+	## Overwrite the favicon, defined in top_head by custom favicon:
+	#if ($fileService.getFileEntry($getterUtil.getLong($group_id),  0, "$localFaviconFileName"))
+	 <link rel="Shortcut Icon" href="$customDKFaviconPath" />
+	#end 
 	
+	#* ---- Include custom CSS and JS ----*#
+	## include css from global document library if exists on server
+	#if ($fileService.getFileEntry($getterUtil.getLong($systemGroupId),  0, "$globalCSSFileName"))
+		<link rel="stylesheet" href="$cssIncludePath">
+	#end 
+	## include js from global document library if exists on server 
+	#if ($fileService.getFileEntry($getterUtil.getLong($systemGroupId),  0, "$globalJSFileName"))
+		<script type="text/javascript" src="$jsIncludePath"></script>
+	#end
+	## include css from DK document library if exists on server
+	#if ($fileService.getFileEntry($getterUtil.getLong($group_id),  0, "$localCSSFileName"))
+		<link rel="stylesheet" href="$cssDKIncludePath">
+	#end
+	## include js from DK document library if exists on server 
+	#if ($fileService.getFileEntry($getterUtil.getLong($group_id),  0, "$localJSFileName"))
+		<script type="text/javascript" src="$jsDKIncludePath"></script>
+	#end
+
 </head>
 
 <body class="$css_class startseite-body pa-randhintergrund">
@@ -37,19 +51,12 @@ $theme.include($body_top_include)
 	<header id="banner" role="banner">
 
 	
-		<div id="heading">
-##				<div class="page-title">
-##					<a href="$site_default_url">
-##						<h1><span>$the_title</span></h1>
-##					</a>
-##				</div>	
-				
-		</div>
+		<div id="heading"></div>
 		
 
-##		#if ($has_navigation || $is_signed_in)
-##			#parse ("$full_templates_path/navigation.vm")
-##		#end
+		#if ($has_navigation || $is_signed_in)
+			#parse ("$full_templates_path/navigation.vm")
+		#end
 	</header>
 
 	<div id="content">
@@ -64,11 +71,34 @@ $theme.include($body_top_include)
 		#end
 	</div>
 
+	#if ($canSetSmartphoneContent)
+		<div id="smartphone-content-control">			
+			<button id="smartphone-content-toggle" class"btn">
+				Smartphone-Content-Anzeige umschalten
+			</button> 
+			
+			<script>
+			document.getElementById('smartphone-content-toggle').onclick = function() {
+    			var div = document.getElementById('smartphone-exclusive-content-container');
+    			var t = document.getElementById('smartphone-help-text');
+   				if (div.style.display !== 'block') {
+        			div.style.display = 'block';
+        			t.style.display = 'block';
+    			}
+    			else {
+        			div.style.display = 'none';
+        			t.style.display = 'none';
+    			}
+			};
+			</script>
+		</div>
+	#end
 
+</div>
+	
 	<footer id="footer" role="contentinfo">
 		<span> $footerContent </span>
 	</footer>
-</div>
 
 </div>
 
